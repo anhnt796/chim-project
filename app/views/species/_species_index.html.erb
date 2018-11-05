@@ -1,3 +1,4 @@
+<%= paginate @species %>
 <% @species.each_slice(3) do |specie_row| %>
   <div class="row">
     <% specie_row.each do |specie| %>
