@@ -1,25 +1,25 @@
 <div class="record" id="record-#{review.id}">
   <li>
     <%= avatar_for(review.user) %>
-    <strong><%= review.user.user_name %></strong>
+    <strong><%= review.user.user_name %>&emsp;</strong>
     <span><%= review.comment %></span><br>
-    <strong>Rating</strong>
+    <strong>Rating&ensp;</strong>
     <span><%= review.rating_float %></span>
     <%= render partial: "reviews/rating", locals: {rating: review.rating_float} %>
     <strong>Reviewed at </strong>
-    <span><%= review.updated_at.strftime("%Y-%m-%d, %H:%M") %></span>
+    <span><%= review.updated_at.localtime.strftime("%d-%m-%Y, %H:%M") %></span>
     <% if user_signed_in? %>
-      <button class="btn" data-toggle="collapse" data-target="#link-reply-<%= review.id %>">Reply</button>
+      <button class="btn btn-link" data-toggle="collapse" data-target="#link-reply-<%= review.id %>">
+        <span style="font-size:larger;">Reply</span>
+      </button>
       <div class="collapse" id="link-reply-<%= review.id %>">
         <%= render partial: "replies/form", locals: { :review_id => review.id } %>
       </div>
     <% end %>
   </li>
-  <div class="container">
-    <div class="container">
-      <ul class="review-list">
-        <%= render review.replies %>
-      </ul>
-    </div>
+  <div style="padding-left: 100px">
+    <ul class="review-list">
+      <%= render review.replies %>
+    </ul>
   </div>
 </div>

@@ -37,7 +37,7 @@ class RepliesController < ApplicationController
       else
         flash[:warning] = "Some errors occured"
       end
-      redirect_to @review
+      redirect_to :back
     end
   end
 
