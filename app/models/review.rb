@@ -11,6 +11,6 @@ class Review < ActiveRecord::Base
   validates :rating_easy, numericality: { greater_than_or_equal_to: 5, less_than_or_equal_to: 50 }
 
   def rating_float
-    rating*0.1
+    ((rating+rating_price+rating_easy)*0.1/3).round(1)
   end
 end

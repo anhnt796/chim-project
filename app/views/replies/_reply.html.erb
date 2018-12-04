@@ -1,7 +1,7 @@
 <div class="record" id="record-#{review.id}">
   <li>
     <%= avatar_for(reply.user) %>
-    <strong><%= reply.user.user_name %> replied at </strong>
+    <strong><%= reply.user.user_name %></strong> replied at&ensp;
     <span><%= reply.updated_at.localtime.strftime("%d-%m-%Y, %H:%M") %></span><br>
     <span><%= reply.content %></span><br>
   </li>
