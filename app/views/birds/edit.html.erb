@@ -60,7 +60,7 @@
 
                       <%= f.label :species_id, "種類" %><br>
                       <% options = options_from_collection_for_select(@species, 'id', 'species_name') %>
-                      <%= f.select :species_id,  options %>
+                      <%= f.select :species_id,  options %><br>
 
                       <%= f.label :bird_voice, "声" %>
                       <%= f.file_field :bird_voice ,class:'upload-btn'%>
