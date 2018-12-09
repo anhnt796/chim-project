@@ -18,19 +18,19 @@
           <% end %>
           <div class="field">
             <%= f.label :bird_name, "名" %><br>
-            <%= f.text_field :bird_name %>
+            <%= f.text_field :bird_name, class: "form-control" %>
           </div>
           <div class="field">
             <%= f.label :bird_info, "情報" %><br>
-            <%= f.text_area :bird_info %>
+            <%= f.text_area :bird_info, class: "form-control" %>
           </div>
           <div class="field">
             <%= f.label :bird_price, "値段"%><br>
-            <%= f.number_field :bird_price %>
+            <%= f.number_field :bird_price, class: "form-control"  %>
           </div>
           <div class="field">
             <%= f.label :bird_voice, "声" %>
-            <%= f.file_field :bird_voice ,class:'upload-btn'%>
+            <%= f.file_field :bird_voice , class: "form-control upload-btn" %>
           </div>
           <div class="field">
             <%= f.label :species_id, "種類" %><br>
@@ -38,7 +38,7 @@
             <%= f.select :species_id,  options %>
           </div>
           <div class="actions">
-            <%= f.submit "作成"%>
+            <%= f.submit "作成", class: "btn" %>
           </div>
           <%= link_to 'バック', birds_path %>
         <% end %>
