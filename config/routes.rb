@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
+  devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registrations"}
   resources :users, only: [:show, :edit, :update]
   get '/user_review', to: 'reviews#show_user_reviews', as: 'user_review'
   get '/admin', to: 'admin#index', as: 'admin'
