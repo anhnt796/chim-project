@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   get '/user_review', to: 'reviews#show_user_reviews', as: 'user_review'
   get '/admin', to: 'admin#index', as: 'admin'
+  get '/about', to: 'about#index', as: 'about'
   resources :bird_images
   resources :species
   resources :birds do
